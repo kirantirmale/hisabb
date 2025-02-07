@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Features from '../components/Features';
 import Sidebar from '../components/Sidebar';
-import { PiX } from 'react-icons/pi';
 
 const Feature = () => {
     const [activeSection, setActiveSection] = useState('');
 
     const handleSetActive = (section) => {
         setActiveSection(section);
-
-        const sidebar = document.querySelector('.sidebar');
-        if (sidebar) {
-            sidebar.scrollTop = 0;
-        }
     };
 
     const scrollToSection = (section) => {
@@ -20,15 +14,27 @@ const Feature = () => {
     };
 
     useEffect(() => {
-        const sidebar = document.querySelector('.sidebar');
-        if (sidebar) {
-            sidebar.scrollTop = 0;
-        }
-    }, [activeSection]);
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => sections.forEach((section) => observer.unobserve(section));
+    }, []);
 
     return (
         <>
-            <Sidebar handleSetActive={handleSetActive} scrollToSection={scrollToSection} />
+            <Sidebar handleSetActive={handleSetActive} scrollToSection={scrollToSection} activeSection={activeSection} />
             <Features handleSetActive={handleSetActive} scrollToSection={scrollToSection} />
         </>
     );

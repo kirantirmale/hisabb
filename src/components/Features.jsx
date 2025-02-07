@@ -28,9 +28,12 @@ import run3 from "../images/features/gstr3b.png";
 import lock from "../images/features/locktransaction.png";
 import whatsapp from "../images/features/whatsapp.png";
 import other from "../images/features/search.png";
-
 import { SlArrowUpCircle } from "react-icons/sl";
-const Features = () => {
+
+const Features = ({ handleSetActive, scrollToSection }) => {
+
+
+  
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
@@ -52,6 +55,7 @@ const Features = () => {
 
   return (
     <div className="content">
+
       <section id="invoicing">
         <h2 className='feature-h2'>Invoicing</h2>
         <img src={invoice} alt="Invoicing" />
@@ -60,7 +64,7 @@ const Features = () => {
         </p>
       </section>
 
-      <section id="Expense">
+      <section id="expense">
         <h2 className='feature-h2'>Easily keep track of your expenses and incomes</h2>
         <div className='row' style={{ marginTop: "20px" }}>
           <div className="col-md-4">
@@ -79,6 +83,7 @@ const Features = () => {
           </div>
         </div>
       </section>
+
 
       <section id="contacts">
         <h2 className='feature-h2'>Manage contacts easily</h2>
@@ -118,7 +123,8 @@ const Features = () => {
         </div>
       </section>
 
-      <section id="inventory" className="inventory-section">
+
+      <section id="inventory" >
         <h2>Inventory</h2>
         <div className="inventory-wrapper">
           <div className="inventory-content">
@@ -135,6 +141,7 @@ const Features = () => {
         </div>
       </section>
 
+
       <section id="banking">
         <h2 className='feature-h2'>Record Banking Transactions</h2>
         <div className='row'>
@@ -148,6 +155,7 @@ const Features = () => {
           </div>
         </div>
       </section>
+
 
       <section id="currency">
         <h2 className='feature-h2'>Multi Currency</h2>
@@ -168,14 +176,14 @@ const Features = () => {
         <p className='multicurrency-p'>Content for Automatic e-way bill</p>
       </section>
 
-      <section id="einvoice">
+      <section id="invoicee">
         <h2 className='feature-h2'>Automatic E-Invoice</h2>
         <img src={einvoice} alt="Invoicing" />
         <p className='multicurrency-p'>When you create a Sale invoice or its Credit note or Debit note, E-Invoice is created automatically. Get E-Invoice details along with QR code in Invoice PDF. Also, cancelling E-Invoice within 24 hours is seamless.</p>
       </section>
 
 
-      <section id="accounting" className=''>
+      <section id="accounting">
         <h2 className='feature-h2'>Complete accounting</h2>
         <div className='accounting-img'>
 
@@ -184,6 +192,7 @@ const Features = () => {
         </div>
         <p className='multicurrency-p'>Content for Complete accounting</p>
       </section>
+
 
       <section id="collaborate">
         <h2 className='feature-h2'>Collaborate and work together</h2>
@@ -204,6 +213,7 @@ const Features = () => {
         <img src={Dashboard} alt="Invoicing" />
         <p className='multicurrency-p'>See how your business is going at a glance with charts on dashboard</p>
       </section>
+
 
       <section id="reports">
         <h2 className="feature-h2">Reports</h2>
@@ -258,6 +268,8 @@ const Features = () => {
       </section>
 
 
+
+
       {showTopBtn && (
         <button
           onClick={scrollToTop}
@@ -266,7 +278,7 @@ const Features = () => {
             bottom: "40px",
             right: "30px",
             padding: "10px 15px",
-            backgroundColor: "violet",
+            backgroundColor: "#2471a3",
             color: "white",
             border: "none",
             borderRadius: "15px",

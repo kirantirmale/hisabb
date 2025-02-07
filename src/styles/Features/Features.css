@@ -1,5 +1,5 @@
 :root {
-  --primary-color: violet;  /* Set primary color to violet */
+  --primary-color: #2471a3;  
   --black: black;
   --white: white;
 }
@@ -9,23 +9,56 @@
   height: 100vh;
 }
 
-/* Sidebar styles */
+.sidemenu{
+  width: 100% !important;
+  background-color: #f5efef !important;
+
+}
+.menu-btn {
+  position: fixed;
+  top: 65px;
+  right: 35px;
+  /* left: 15px; */
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
-  top: 68px;
-  left: 0;
+  left: -250px;
+  top: 65px;
   height: 100vh;
   width: 250px;
-  overflow-y: auto;
   background-color: #f5efef;
   padding: 10px;
   border-right: 1px solid #ddd;
+  transition: left 0.3s ease-in-out;
 }
 
+/* Show Sidebar when open */
+.sidebar.open {
+  left: 0;
+}
+
+/* Mobile Responsiveness */
+@media (min-width: 768px) {
+
+  .menu-btn {
+    display: none; /* Hide menu button on larger screens */
+  }
+
+  .sidebar {
+    left: 0; /* Sidebar always visible on large screens */
+  }
+  
+}
 .sidebar nav ul {
   list-style-type: none;
   padding: 0;
-  padding-top: 15px;
 }
 
 .sidebar h1 {
@@ -33,9 +66,7 @@
 }
 
 .sidebar nav ul li {
-  margin-bottom: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  margin-bottom: 18px;
   color: gray;
 
 }
@@ -54,12 +85,11 @@
 }
 
 .sidebar nav ul li a.active {
-  color: violet;
+  color: rgb(255, 0, 98) !important;
 }
 
-/* Content styles */
 .content {
-  top: 0 !important;
+  top: 0;
   margin-left: 250px;
   padding: 20px;
   overflow-y: auto;
@@ -74,7 +104,19 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Apply primary color to all h2 elements */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .content section {
+    padding: 20px;
+  }
+}
+
 h2 {
   color: var(--primary-color);
   font-size: 24px;
@@ -229,4 +271,10 @@ h2 {
   display: block;
   margin: 10px auto; /* Center the image */
   border-radius: 8px; /* Optional for rounded corners */
+}
+.sidebar nav ul li a.active {
+  color: #007bff;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
