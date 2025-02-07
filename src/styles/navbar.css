@@ -1,0 +1,147 @@
+/* Sticky Navbar */
+:root {
+  --primary-color: violet;  /* Set primary color to violet */
+  --black: black;
+  --white: white;
+}
+
+.btn1 {
+  background-color: var(--white);
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: var(--primary-color) !important;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar.fixed-top {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: top 0.3s; 
+  background-color: var(--primary-color) !important;
+}
+
+/* Navbar Links */
+.nav-link {
+  color: var(--white) !important;
+  font-weight: 600 !important;
+}
+
+/* Centering Navbar Links */
+.navbar-nav {
+  display: flex;
+  justify-content: center; 
+  gap: 2rem; 
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+/* Right Aligned Buttons */
+.navbar-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; 
+  font-size: 1.5rem;
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: var(--primary-color) !important;
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.mobile-navbar__close {
+  font-size: 3rem;
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mobile-navbar__links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 2.3rem;
+  gap: 3rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.mobile-navbar__links li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.mobile-navbar__links li a:hover {
+  color: var(--white);
+  opacity: 0.8; /* Improves visibility instead of turning violet on violet */
+}
+
+.me-2 {
+  font-size: 1.5rem;
+  margin-top: 4px;
+  color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-hamb {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-nav {
+    gap: 2.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,112 @@
+
+:root {
+  --primary-color: violet;
+  --black: black;
+  --white: white;
+}
+.campaign-section {
+  position: relative;
+  padding: 50px 0;
+}
+.btn2{
+  padding: 6px 18px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.btn3{
+  padding: 6px 18px;
+  /* background-color: var(--primary-color); */
+  /* color: var(--white); */
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  gap: 5px;
+}
+.truck-container {
+  position: relative;
+  text-align: center;
+}
+
+.truck-container img.truck {
+  padding-top: 25px;
+  width: 100%;
+  max-width: 600px;
+}
+
+@keyframes rotate-wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel {
+  position: absolute;
+  width: 120px;
+  animation: rotate-wheel 2s linear infinite; /* Rotates infinitely */
+}
+
+.wheel-left {
+  bottom: -55px;
+  left: 11%;
+}
+
+.wheel-right {
+  bottom: -55px;
+  right: 15%;
+}
+
+/* Road animation */
+@keyframes scroll-road {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2000px 0;
+  }
+}
+
+.road-container {
+  position: absolute;
+  bottom: -65px;
+  width: 100%;
+  height: 100px;
+  padding-top: 40px;
+  background-color: #4B4B4B;
+  background-repeat: repeat-x;
+  animation: scroll-road 10s linear infinite;
+  z-index: -1; 
+}
+.road-img{
+  background-image: url("../../images/hero/road-track.svg"); /* Add a road image */
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 100px;
+  animation: scroll-road 10s linear infinite;
+
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .truck-container img.truck {
+    max-width: 400px;
+  }
+
+  .wheel {
+    width: 90px;
+  }
+
+  .wheel-left {
+    left: 10%;
+  }
+
+  .wheel-right {
+    right: 10%;
+  }
+}

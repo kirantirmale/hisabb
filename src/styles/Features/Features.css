@@ -1,0 +1,232 @@
+:root {
+  --primary-color: violet;  /* Set primary color to violet */
+  --black: black;
+  --white: white;
+}
+
+.features-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  overflow-y: auto;
+  background-color: #f5efef;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 15px;
+}
+
+.sidebar h1 {
+  text-align: center;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: gray;
+
+}
+
+.sidebar nav ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar nav ul li a:hover {
+  padding-left: 10px;
+  transition: all 0.3s;
+}
+
+.sidebar nav ul li a.active {
+  color: violet;
+}
+
+/* Content styles */
+.content {
+  top: 0 !important;
+  margin-left: 250px;
+  padding: 20px;
+  overflow-y: auto;
+  width: calc(100% - 250px);
+}
+
+.content section {
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply primary color to all h2 elements */
+h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content section img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.feature-h2 {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 17px;
+}
+
+.invoicing-p,
+.expense-p,
+.contact-p,
+.banking-p {
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.payment-p {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.multicurrency-p {
+  color: gray;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.inventory-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.inventory-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.inventory-content,
+.inventory-content2 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.inventory-im {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+}
+
+.inventory-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.inventory-section h2{
+  color: var(--primary-color);
+}
+.multicurrency-p{
+  font-size: 14px;
+  text-align: center;
+}
+
+.accounting-img{
+  display: flex;
+}
+.collaborate-img{
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+}
+.reports-img1{
+  display: flex;
+  gap: 25px;
+  /* padding: 25px; */
+}
+.reports-img2{
+  display: flex;
+  gap: 25px;
+  /* padding: 25px; */
+}
+
+.reports-container {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* max-width: 900px; */
+  margin: auto;
+}
+
+.reports-main {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reports-main-img {
+  width: 70% !important;
+  
+  border-radius: 8px;
+}
+
+.reports-text {
+  color: gray;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.reports-sub {
+  text-align: center;
+  width: 100%;
+}
+
+.reports-sub-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.reports-sub-item {
+  width: 45%;
+  text-align: center;
+}
+
+.reports-sub-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.other-img {
+  width: 60%; /* Adjust width as needed */
+  max-width: 600px; /* Set a max width */
+  height: auto;
+  display: block;
+  margin: 10px auto; /* Center the image */
+  border-radius: 8px; /* Optional for rounded corners */
+}
