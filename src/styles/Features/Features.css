@@ -86,7 +86,7 @@
 }
 
 .sidebar nav ul li a.active {
-  color: black !important;
+  color: black ;
 }
 
 .content {
