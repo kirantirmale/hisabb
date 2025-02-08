@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #2471a3;  
+  --primary-color: #2471a3;
   --black: black;
   --white: white;
 }
@@ -9,11 +9,12 @@
   height: 100vh;
 }
 
-.sidemenu{
+.sidemenu {
   width: 100% !important;
   background-color: #f5efef !important;
 
 }
+
 .menu-btn {
   position: fixed;
   top: 65px;
@@ -48,14 +49,17 @@
 @media (min-width: 768px) {
 
   .menu-btn {
-    display: none; /* Hide menu button on larger screens */
+    display: none;
+    /* Hide menu button on larger screens */
   }
 
   .sidebar {
-    left: 0; /* Sidebar always visible on large screens */
+    left: 0;
+    /* Sidebar always visible on large screens */
   }
-  
+
 }
+
 .sidebar nav ul {
   list-style-type: none;
   padding: 0;
@@ -86,7 +90,7 @@
 }
 
 .sidebar nav ul li a.active {
-  color: black ;
+  color: black;
 }
 
 .content {
@@ -133,7 +137,7 @@ h2 {
 .feature-h2 {
   color: var(--primary-color);
   text-align: center;
-  font-size: 17px;
+  font-size: 25px;
 }
 
 .invoicing-p,
@@ -142,7 +146,7 @@ h2 {
 .banking-p {
   text-align: center;
   color: gray;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 20px;
 }
@@ -180,40 +184,62 @@ h2 {
 }
 
 .inventory-im {
-  width: 100px; /* Adjust as needed */
+  width: 100px;
+  /* Adjust as needed */
   height: auto;
 }
 
 .inventory-text {
   font-size: 18px;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin: 10px 0;
-}
-.inventory-section h2{
-  color: var(--primary-color);
-}
-.multicurrency-p{
-  font-size: 14px;
+  color: gray;
   text-align: center;
 }
 
-.accounting-img{
-  display: flex;
+.inventory-section h2 {
+  color: var(--primary-color);
 }
-.collaborate-img{
-  display: flex;
-  gap: 25px;
-  padding: 25px;
+
+.multicurrency-h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
-.reports-img1{
-  display: flex;
-  gap: 25px;
-  /* padding: 25px; */
+
+.automatic-ewaybill-p {
+  text-align: center;
+  font-size: 20px;
+  color: gray;
+  margin-top: 20px;
 }
-.reports-img2{
-  display: flex;
-  gap: 25px;
-  /* padding: 25px; */
+
+.automatic-einvoice-p {
+  text-align: center;
+  font-size: 20px;
+  color: gray;
+  margin-top: 20px;
+}
+.currency-p{
+  text-align: center;
+  font-size: 20px;
+  color: gray;
+}
+
+
+.collaborate-p{
+  text-align: center;
+  font-size: 20px;
+  color: gray;
+  margin-top: 20vh;
+}
+
+
+.accounting-p {
+  color: gray;
+  text-align: center;
+  font-size: 20px;
+
 }
 
 .reports-container {
@@ -231,7 +257,6 @@ h2 {
 
 .reports-main-img {
   width: 70% !important;
-  
   border-radius: 8px;
 }
 
@@ -266,13 +291,18 @@ h2 {
 }
 
 .other-img {
-  width: 60%; /* Adjust width as needed */
-  max-width: 600px; /* Set a max width */
+  width: 60%;
+  /* Adjust width as needed */
+  max-width: 600px;
+  /* Set a max width */
   height: auto;
   display: block;
-  margin: 10px auto; /* Center the image */
-  border-radius: 8px; /* Optional for rounded corners */
+  margin: 10px auto;
+  /* Center the image */
+  border-radius: 8px;
+  /* Optional for rounded corners */
 }
+
 .sidebar nav ul li a.active {
   color: #007bff;
   font-weight: bold;

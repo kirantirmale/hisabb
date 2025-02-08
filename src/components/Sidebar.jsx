@@ -20,20 +20,19 @@ import {
   FaHamburger
 } from "react-icons/fa";
 
-const Sidebar = ({ scrollToSection, activeSection }) => {
+const Sidebar = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-
+  console.log(activeSection,"activeSection")
   return (
     <>
-    <div className="sidemenu">
-      <button className="menu-btn" onClick={toggleSidebar}>
-        {isOpen ? <FaTimes /> : <FaHamburger style={{ color: "orange" }} />}
-      </button>
-    </div>
+      <div className="sidemenu">
+        <button className="menu-btn" onClick={toggleSidebar}>
+          {isOpen ? <FaTimes /> : <FaHamburger style={{ color: "orange" }} />}
+        </button>
+      </div>
 
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <nav>
@@ -46,10 +45,8 @@ const Sidebar = ({ scrollToSection, activeSection }) => {
                 duration={500}
                 className={activeSection === "invoicing" ? "active" : ""}
                 onClick={() => {
-                  scrollToSection("invoicing");
-                  setIsOpen(false); // Close menu on selection
-                }}
-              >
+                  setIsOpen(false);
+                }}              >
                 <FaFileInvoice /> Invoicing
               </Link>
             </li>
@@ -62,7 +59,6 @@ const Sidebar = ({ scrollToSection, activeSection }) => {
                 duration={500}
                 className={activeSection === "expense" ? "active" : ""}
                 onClick={() => {
-                  scrollToSection("expense");
                   setIsOpen(false);
                 }}
               >
@@ -71,195 +67,179 @@ const Sidebar = ({ scrollToSection, activeSection }) => {
             </li>
 
             <li>
-            <Link
-              to="contacts"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "contacts" ? "active" : ""}
-              onClick={() => scrollToSection("contacts")}
-            >
-              <FaAddressBook /> Contacts
-            </Link>
-          </li>
+              <Link
+                to="contacts"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "contacts" ? "active" : ""}
+              >
+                <FaAddressBook /> Contacts
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="payments"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "payments" ? "active" : ""}
-              onClick={() => scrollToSection("payments")}
+            <li>
+              <Link
+                to="payments"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "payments" ? "active" : ""}
+              >
+                <FaCreditCard style={{ fontSize: "24px" }} /> Payments
+              </Link>
+            </li>
 
-            >
-              <FaCreditCard style={{ fontSize: "24px" }} /> Payments
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="inventory"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "inventory" ? "active" : ""}
+              >
+                <FaWarehouse style={{ fontSize: "24px" }} /> Inventory
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="inventory"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "inventory" ? "active" : ""}
-              onClick={() => scrollToSection("inventory")}
-            >
-              <FaWarehouse style={{ fontSize: "24px" }} /> Inventory
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="banking"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "banking" ? "active" : ""}
 
-          <li>
-            <Link
-              to="banking"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "banking" ? "active" : ""}
-              onClick={() => scrollToSection("banking")}
+              >
+                <FaPiggyBank style={{ fontSize: "24px" }} /> Banking
+              </Link>
+            </li>
 
-            >
-              <FaPiggyBank style={{ fontSize: "24px" }} /> Banking
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="currency"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "currency" ? "active" : ""}
 
-          <li>
-            <Link
-              to="currency"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "currency" ? "active" : ""}
-              onClick={() => scrollToSection("currency")}
+              >
+                <FaGlobe style={{ fontSize: "24px" }} /> Multi Currency
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="automatic-ewaybill"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "automatic-ewaybill" ? "active" : ""}
+              >
+                <FaFileInvoiceDollar style={{ fontSize: "24px" }} /> Automatic e-Way Bill
+              </Link>
+            </li>
 
-            >
-              <FaGlobe style={{ fontSize: "24px" }} /> Multi Currency
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="ewaybill"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "ewaybill" ? "active" : ""}
-              onClick={() => scrollToSection("ewaybill")}
-            >
-              <FaFileInvoiceDollar style={{ fontSize: "24px" }} /> Automatic e-Way Bill
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="automatic-einvoice"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "automatic-einvoice" ? "active" : ""}
+              >
+                <FaFileInvoice style={{ fontSize: "24px" }} /> Automatic E-Invoice
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="invoicee"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "invoicee" ? "active" : ""}
-              onClick={() => scrollToSection("invoicee")}
-            >
-              <FaFileInvoice style={{ fontSize: "24px" }} /> Automatic E-Invoice
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="accounting"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "accounting" ? "active" : ""}
 
-          <li>
-            <Link
-              to="accounting"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "accounting" ? "active" : ""}
-              onClick={() => scrollToSection("accounting")}
+              >
+                <FaChartBar style={{ fontSize: "24px" }} /> Complete accounting
+              </Link>
+            </li>
 
-            >
-              <FaChartBar style={{ fontSize: "24px" }} /> Complete accounting
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="collaborate"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "collaborate" ? "active" : ""}
 
-          <li>
-            <Link
-              to="collaborate"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "collaborate" ? "active" : ""}
-              onClick={() => scrollToSection("collaborate")}
+              >
+                <FaLock style={{ fontSize: "24px" }} /> Collaborate
+              </Link>
+            </li>
 
-            >
-              <FaLock style={{ fontSize: "24px" }} /> Collaborate
-            </Link>
-          </li>
+            <li>
+              <Link
+                to="dashboard"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "dashboard" ? "active" : ""}
+              >
+                <FaRegChartBar style={{ fontSize: "24px" }} /> Dashboard 
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="dashboard"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "dashboard" ? "active" : ""}
-              onClick={() => scrollToSection("dashboard")}
+            <li>
+              <Link
+                to="reports"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "reports" ? "active" : ""}
 
-            >
-              <FaRegChartBar style={{ fontSize: "24px" }} /> Dashboard
-            </Link>
-          </li>
+              >
+                <FaChartBar style={{ fontSize: "24px" }} /> Reports
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="reports"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "reports" ? "active" : ""}
-              onClick={() => scrollToSection("reports")}
+            <li>
+              <Link
+                to="lock"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "lock" ? "active" : ""}
 
-            >
-              <FaChartBar style={{ fontSize: "24px" }} /> Reports
-            </Link>
-          </li>
+              >
+                <FaLockOpen style={{ fontSize: "24px" }} /> Lock Transaction
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="lock"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "lock" ? "active" : ""}
-              onClick={() => scrollToSection("lock")}
+            <li>
+              <Link
+                to="whatsapp"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "whatsapp" ? "active" : ""}
 
-            >
-              <FaLockOpen style={{ fontSize: "24px" }} /> Lock Transaction
-            </Link>
-          </li>
+              >
+                <FaWhatsapp style={{ fontSize: "24px" }} /> WhatsApp
+              </Link>
+            </li>
 
-          <li>
-            <Link
-              to="whatsapp"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "whatsapp" ? "active" : ""}
-              onClick={() => scrollToSection("whatsapp")}
+            <li>
+              <Link
+                to="other"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={activeSection === "other" ? "active" : ""}
 
-            >
-              <FaWhatsapp style={{ fontSize: "24px" }} /> WhatsApp
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="other"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "other" ? "active" : ""}
-              onClick={() => scrollToSection("other")}
-
-            >
-              <FaEllipsisH style={{ fontSize: "24px" }} /> Other
-            </Link>
-          </li>
+              >
+                <FaEllipsisH style={{ fontSize: "24px" }} /> Other
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
