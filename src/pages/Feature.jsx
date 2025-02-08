@@ -5,20 +5,17 @@ import Sidebar from '../components/Sidebar';
 const Feature = () => {
     const [activeSection, setActiveSection] = useState('');
 
- 
-
     useEffect(() => {
         const sections = document.querySelectorAll('section');
 
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
+                const visibleSection = entries.find(entry => entry.isIntersecting);
+                if (visibleSection) {
+                    setActiveSection(visibleSection.target.id);
+                }
             },
-            { threshold: 0.1 }
+            { threshold: 0.5 } 
         );
 
         sections.forEach((section) => observer.observe(section));
