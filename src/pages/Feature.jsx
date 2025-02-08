@@ -5,13 +5,7 @@ import Sidebar from '../components/Sidebar';
 const Feature = () => {
     const [activeSection, setActiveSection] = useState('');
 
-    const handleSetActive = (section) => {
-        setActiveSection(section);
-    };
-
-    const scrollToSection = (section) => {
-        document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-    };
+ 
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
