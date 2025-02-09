@@ -1,249 +1,108 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { FaFileInvoice, 
-  FaMoneyBillWave,
-   FaAddressBook,
-   FaCreditCard,
-   FaWarehouse,
-   FaPiggyBank,
-   FaGlobe,
-   FaFileInvoiceDollar,
-   FaChartBar,
-   FaLock,
-   FaRegChartBar,
-   FaLockOpen,
-   FaWhatsapp,
-   FaEllipsisH,
-   } from "react-icons/fa";
+import {
+  FaFileInvoice, FaMoneyBillWave, FaAddressBook, FaCreditCard,
+  FaWarehouse, FaPiggyBank, FaGlobe, FaFileInvoiceDollar, FaChartBar,
+  FaLock, FaRegChartBar, FaLockOpen, FaWhatsapp, FaEllipsisH
+} from "react-icons/fa";
 
 const Sidebar = ({ activeSection }) => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerHeight = 100; // Adjust this to control when it becomes fixed
+      setIsFixed(window.scrollY > triggerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isFixed ? "fixed-sidebar" : ""}`}>
       <nav>
         <ul>
           <li>
-            <Link
-              to="invoicing"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "invoicing" ? "active" : ""}
-              aria-selected={activeSection === "invoicing"} 
-            >
+            <Link to="invoicing" spy smooth duration={500} className={activeSection === "invoicing" ? "active" : ""}>
               <FaFileInvoice /> Invoicing
             </Link>
           </li>
           <li>
-            <Link
-              to="expense"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "expense" ? "active" : ""}
-              aria-selected={activeSection === "expense"} 
-            >
+            <Link to="expense" spy smooth duration={500} className={activeSection === "expense" ? "active" : ""}>
               <FaMoneyBillWave /> Expense / Income
             </Link>
           </li>
           <li>
-            <Link
-              to="contacts"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={activeSection === "contacts" ? "active" : ""}
-              aria-selected={activeSection === "contacts"} 
-            >
+            <Link to="contacts" spy smooth duration={500} className={activeSection === "contacts" ? "active" : ""}>
               <FaAddressBook /> Contacts
             </Link>
           </li>
           <li>
-              <Link
-                to="payments"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "payments" ? "active" : ""}
-                aria-selected={activeSection === "payments"} 
-              >
-                <FaCreditCard style={{ fontSize: "24px" }} /> Payments
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="inventory"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "inventory" ? "active" : ""}
-                aria-selected={activeSection === "inventory"} 
-              >
-                <FaWarehouse style={{ fontSize: "24px" }} /> Inventory
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="banking"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "banking" ? "active" : ""}
-                aria-selected={activeSection === "banking"} 
-
-
-              >
-                <FaPiggyBank style={{ fontSize: "24px" }} /> Banking
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="currency"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "currency" ? "active" : ""}
-                aria-selected={activeSection === "currency"} 
-
-
-              >
-                <FaGlobe style={{ fontSize: "24px" }} /> Multi Currency
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="automatic-ewaybill"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "automatic-ewaybill" ? "active" : ""}
-                aria-selected={activeSection === "automatic-ewaybill"} 
-
-              >
-                <FaFileInvoiceDollar style={{ fontSize: "24px" }} /> Automatic e-Way Bill
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="automatic-einvoice"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "automatic-einvoice" ? "active" : ""}
-                aria-selected={activeSection === "automatic-einvoice"} 
-
-              >
-                <FaFileInvoice style={{ fontSize: "24px" }} /> Automatic E-Invoice
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="accounting"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "accounting" ? "active" : ""}
-                aria-selected={activeSection === "accounting"} 
-
-
-              >
-                <FaChartBar style={{ fontSize: "24px" }} /> Complete accounting
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="collaborate"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "collaborate" ? "active" : ""}
-                aria-selected={activeSection === "collaborate"} 
-
-
-              >
-                <FaLock style={{ fontSize: "24px" }} /> Collaborate
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="dashboard"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "dashboard" ? "active" : ""}
-                aria-selected={activeSection === "dashboard"} 
-
-              >
-                <FaRegChartBar style={{ fontSize: "24px" }} /> Dashboard 
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="reports"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "reports" ? "active" : ""}
-                aria-selected={activeSection === "reports"} 
-
-
-              >
-                <FaChartBar style={{ fontSize: "24px" }} /> Reports
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="lock"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "lock" ? "active" : ""}
-                aria-selected={activeSection === "lock"} 
-                
-
-
-              >
-                <FaLockOpen style={{ fontSize: "24px" }} /> Lock Transaction
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="whatsapp"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "whatsapp" ? "active" : ""}
-                aria-selected={activeSection === "whatsapp"} 
-
-
-              >
-                <FaWhatsapp style={{ fontSize: "24px" }} /> WhatsApp
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="other"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "other" ? "active" : ""}
-                aria-selected={activeSection === "other"} 
-
-
-              >
-                <FaEllipsisH style={{ fontSize: "24px" }} /> Other
-              </Link>
-            </li>
+            <Link to="payments" spy smooth duration={500} className={activeSection === "payments" ? "active" : ""}>
+              <FaCreditCard /> Payments
+            </Link>
+          </li>
+          <li>
+            <Link to="inventory" spy smooth duration={500} className={activeSection === "inventory" ? "active" : ""}>
+              <FaWarehouse /> Inventory
+            </Link>
+          </li>
+          <li>
+            <Link to="banking" spy smooth duration={500} className={activeSection === "banking" ? "active" : ""}>
+              <FaPiggyBank /> Banking
+            </Link>
+          </li>
+          <li>
+            <Link to="currency" spy smooth duration={500} className={activeSection === "currency" ? "active" : ""}>
+              <FaGlobe /> Multi Currency
+            </Link>
+          </li>
+          <li>
+            <Link to="automatic-ewaybill" spy smooth duration={500} className={activeSection === "automatic-ewaybill" ? "active" : ""}>
+              <FaFileInvoiceDollar /> Automatic e-Way Bill
+            </Link>
+          </li>
+          <li>
+            <Link to="automatic-einvoice" spy smooth duration={500} className={activeSection === "automatic-einvoice" ? "active" : ""}>
+              <FaFileInvoice /> Automatic E-Invoice
+            </Link>
+          </li>
+          <li>
+            <Link to="accounting" spy smooth duration={500} className={activeSection === "accounting" ? "active" : ""}>
+              <FaChartBar /> Complete Accounting
+            </Link>
+          </li>
+          <li>
+            <Link to="collaborate" spy smooth duration={500} className={activeSection === "collaborate" ? "active" : ""}>
+              <FaLock /> Collaborate
+            </Link>
+          </li>
+          <li>
+            <Link to="dashboard" spy smooth duration={500} className={activeSection === "dashboard" ? "active" : ""}>
+              <FaRegChartBar /> Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link to="reports" spy smooth duration={500} className={activeSection === "reports" ? "active" : ""}>
+              <FaChartBar /> Reports
+            </Link>
+          </li>
+          <li>
+            <Link to="lock" spy smooth duration={500} className={activeSection === "lock" ? "active" : ""}>
+              <FaLockOpen /> Lock Transaction
+            </Link>
+          </li>
+          <li>
+            <Link to="whatsapp" spy smooth duration={500} className={activeSection === "whatsapp" ? "active" : ""}>
+              <FaWhatsapp /> WhatsApp
+            </Link>
+          </li>
+          <li>
+            <Link to="other" spy smooth duration={500} className={activeSection === "other" ? "active" : ""}>
+              <FaEllipsisH /> Other
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

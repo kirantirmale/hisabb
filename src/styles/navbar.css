@@ -125,6 +125,7 @@
 
   .navbar-toggler {
     display: block;
+    color: var(--white) !important;
   }
 
   .navbar-nav {

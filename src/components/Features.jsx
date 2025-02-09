@@ -76,7 +76,7 @@ const Features = ({ setActiveSection }) => {
           </p>
         </div>
       </section>
-      <br></br>
+      
 
       <section id="expense">
         <div className="containerr">
@@ -103,7 +103,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
       <section id="contacts">
         <div className="containerr">
@@ -124,7 +124,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
       <section id="payments">
         <div className='containerr'>
@@ -149,7 +149,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
 
       <section id="inventory" >
@@ -172,7 +172,7 @@ const Features = ({ setActiveSection }) => {
         </div>
       </section>
 
-      <br></br>
+      
 
       <section id="banking">
         <div className='containerr'>
@@ -189,7 +189,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
 
       <section id="currency">
@@ -206,7 +206,7 @@ const Features = ({ setActiveSection }) => {
         </div>
 
       </section>
-      <br></br>
+      
 
       <section id="automatic-ewaybill">
         <div className='containerr'>
@@ -221,7 +221,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
       <section id="automatic-einvoice">
         <div className='containerr'>
@@ -231,7 +231,7 @@ const Features = ({ setActiveSection }) => {
         </div>
       </section>
 
-      <br></br>
+      
 
       <section id="accounting">
         <div className='containerr'>
@@ -249,7 +249,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
 
       <section id="collaborate">
@@ -270,7 +270,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
       <section id="dashboard">
         <h2 className='feature-h2'>Dashboard</h2>
@@ -278,7 +278,7 @@ const Features = ({ setActiveSection }) => {
         <p className='expense-p'>See how your business is going at a glance with charts on dashboard</p>
       </section>
 
-      <br></br>
+      
 
       <section id="reports">
         <h2 className="feature-h2">Reports</h2>
@@ -290,7 +290,7 @@ const Features = ({ setActiveSection }) => {
               You can export reports as a PDF or export data to a spreadsheet.
             </p>
           </div>
-          <br></br>
+          
 
           <div className="reports-sub">
             <p className="reports-text">
@@ -313,7 +313,7 @@ const Features = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      <br></br>
+      
 
 
       <section id="lock">
@@ -321,21 +321,21 @@ const Features = ({ setActiveSection }) => {
         <img src={lock} alt="Invoicing" />
         <p className='expense-p'>When working in a team, there is always a fear of records being changed or deleted, by mistake or by intention. Hisab allows you to automatically lock transactions at the end of the day, so only Admin users can edit or delete them from the next day</p>
       </section>
-      <br></br>
+      
 
       <section id="whatsapp">
         <h2 className='feature-h2'>WhatsApp</h2>
         <img src={whatsapp} alt="Invoicing" />
         <p className='expense-p'>When you create a new transaction like Sale Invoice, Receipt and Advanced Receipt notification is automatically sent to your customer on WhatsApp and Email. Such transactions can be shared later on too</p>
       </section>
-      <br></br>
+      
 
       <section id="other">
         <h2 className="feature-h2">Faster, smarter way to search and navigate.</h2>
         <img src={other} alt="Other Features" className="other-img" />
         <p className="expense-p">Search helps you spend less time getting there, so you can focus on getting things done.</p>
       </section>
-      <br></br>
+      
 
       {showTopBtn && (
         <button
