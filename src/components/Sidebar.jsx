@@ -27,16 +27,16 @@ const Sidebar = ({ activeSection }) => {
     setIsOpen(!isOpen);
   };
   console.log(activeSection,"activeSection")
-  
+
   return (
     <>
-      <div className="sidemenu">
+      {/* <div className="sidemenu">
         <button className="menu-btn" onClick={toggleSidebar}>
           {isOpen ? <FaTimes /> : <FaHamburger style={{ color: "orange" }} />}
         </button>
-      </div>
+      </div> */}
 
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <div className={`sidebar`}>
         <nav>
           <ul>
             <li>
