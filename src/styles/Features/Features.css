@@ -3,10 +3,11 @@
   --black: black;
   --white: white;
 }
-.container{
+.containerr{
   max-width: 1180px !important;
   margin: 0px auto !important;
-  padding-bottom: 100px !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
 }
 
 

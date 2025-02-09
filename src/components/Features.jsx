@@ -85,7 +85,7 @@ const Features = ({ setActiveSection }) => {
     <div className="content">
 
       <section id="invoicing">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Invoicing</h2>
           <img src={invoice} alt="Invoicing" />
           <p className='invoicing-p'>
@@ -95,7 +95,7 @@ const Features = ({ setActiveSection }) => {
       </section>
 
       <section id="expense">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Easily keep track of your expenses and incomes</h2>
           <div className='row' style={{ marginTop: "20px" }}>
             <div className="col-md-4">
@@ -118,7 +118,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="contacts">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Manage contacts easily</h2>
 
           <div className='row'>
@@ -136,7 +136,7 @@ const Features = ({ setActiveSection }) => {
       </section>
 
       <section id="payments">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Record payments paid to contacts or received from contacts</h2>
           <div className='row'>
             <div className='col-md-6'>
@@ -161,7 +161,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="inventory" >
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Inventory Management</h2>
           <div className="inventory-wrapper">
             <div className="inventory-content">
@@ -182,7 +182,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="banking">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Record Banking Transactions</h2>
           <div className='row'>
             <div className='col-md-6'>
@@ -199,7 +199,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="currency">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Multi Currency</h2>
           <div className='row justify-content-center align-items-center text-center' >
             <div className='col-md-6' style={{ textAlign: 'center' }}>
@@ -214,7 +214,7 @@ const Features = ({ setActiveSection }) => {
       </section>
 
       <section id="automatic-ewaybill">
-        <div className='container'>
+        <div className='containerr'>
           <div className="row justify-content-center align-items-center text-center">
             <div className='col-md-12'>
               <h2 className='feature-h2'>Automatic e-way bill</h2>
@@ -228,7 +228,7 @@ const Features = ({ setActiveSection }) => {
       </section>
 
       <section id="automatic-einvoice">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Automatic E-Invoice</h2>
           <img src={einvoice} alt="Invoicing" />
           <p className='automatic-einvoice-p'>When you create a Sale invoice or its Credit note or Debit note, E-Invoice is created automatically. Get E-Invoice details along with QR code in Invoice PDF. Also, cancelling E-Invoice within 24 hours is seamless.</p>
@@ -237,7 +237,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="accounting">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Complete accounting</h2>
           <div className='row mt-5'>
             <div className='col-md-6'>
@@ -255,7 +255,7 @@ const Features = ({ setActiveSection }) => {
 
 
       <section id="collaborate">
-        <div className='container'>
+        <div className='containerr'>
           <h2 className='feature-h2'>Collaborate and work together</h2>
           <div className='row collaborate-img' >
             <div className='col-md-6' >
@@ -274,7 +274,7 @@ const Features = ({ setActiveSection }) => {
       </section>
 
       <section id="dashboard">
-        <h2 className='dashboard-h2'>Dashboard</h2>
+        <h2 className='feature-h2'>Dashboard</h2>
         <img src={Dashboard} alt="dashboard" />
         <p className='multicurrency-p'>See how your business is going at a glance with charts on dashboard</p>
       </section>
@@ -282,7 +282,7 @@ const Features = ({ setActiveSection }) => {
 
       <section id="reports">
         <h2 className="feature-h2">Reports</h2>
-        <div className="reports-container">
+        <div className="reports-containerr">
           <div className="reports-main">
             <img src={run1} alt="Reports Overview" className="reports-main-img" />
             <p className="reports-text">
@@ -295,7 +295,7 @@ const Features = ({ setActiveSection }) => {
             <p className="reports-text">
               Instantly generate/download required GST reports that you need to submit while filing monthly GST returns.
             </p>
-            <div className="reports-sub-container">
+            <div className="reports-sub-containerr">
               <div className="reports-sub-item">
                 <img src={run2} alt="GST Sales Report" className="reports-sub-img" />
                 <p className="reports-text">
