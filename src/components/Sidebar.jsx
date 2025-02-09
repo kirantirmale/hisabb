@@ -28,6 +28,7 @@ const Sidebar = ({ activeSection }) => {
               smooth={true}
               duration={500}
               className={activeSection === "invoicing" ? "active" : ""}
+              aria-selected={activeSection === "invoicing"} 
             >
               <FaFileInvoice /> Invoicing
             </Link>
@@ -39,6 +40,7 @@ const Sidebar = ({ activeSection }) => {
               smooth={true}
               duration={500}
               className={activeSection === "expense" ? "active" : ""}
+              aria-selected={activeSection === "expense"} 
             >
               <FaMoneyBillWave /> Expense / Income
             </Link>
@@ -50,6 +52,7 @@ const Sidebar = ({ activeSection }) => {
               smooth={true}
               duration={500}
               className={activeSection === "contacts" ? "active" : ""}
+              aria-selected={activeSection === "contacts"} 
             >
               <FaAddressBook /> Contacts
             </Link>
@@ -61,6 +64,7 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "payments" ? "active" : ""}
+                aria-selected={activeSection === "payments"} 
               >
                 <FaCreditCard style={{ fontSize: "24px" }} /> Payments
               </Link>
@@ -73,6 +77,7 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "inventory" ? "active" : ""}
+                aria-selected={activeSection === "inventory"} 
               >
                 <FaWarehouse style={{ fontSize: "24px" }} /> Inventory
               </Link>
@@ -85,6 +90,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "banking" ? "active" : ""}
+                aria-selected={activeSection === "banking"} 
+
 
               >
                 <FaPiggyBank style={{ fontSize: "24px" }} /> Banking
@@ -98,6 +105,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "currency" ? "active" : ""}
+                aria-selected={activeSection === "currency"} 
+
 
               >
                 <FaGlobe style={{ fontSize: "24px" }} /> Multi Currency
@@ -110,6 +119,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "automatic-ewaybill" ? "active" : ""}
+                aria-selected={activeSection === "automatic-ewaybill"} 
+
               >
                 <FaFileInvoiceDollar style={{ fontSize: "24px" }} /> Automatic e-Way Bill
               </Link>
@@ -122,6 +133,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "automatic-einvoice" ? "active" : ""}
+                aria-selected={activeSection === "automatic-einvoice"} 
+
               >
                 <FaFileInvoice style={{ fontSize: "24px" }} /> Automatic E-Invoice
               </Link>
@@ -134,6 +147,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "accounting" ? "active" : ""}
+                aria-selected={activeSection === "accounting"} 
+
 
               >
                 <FaChartBar style={{ fontSize: "24px" }} /> Complete accounting
@@ -147,6 +162,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "collaborate" ? "active" : ""}
+                aria-selected={activeSection === "collaborate"} 
+
 
               >
                 <FaLock style={{ fontSize: "24px" }} /> Collaborate
@@ -160,6 +177,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "dashboard" ? "active" : ""}
+                aria-selected={activeSection === "dashboard"} 
+
               >
                 <FaRegChartBar style={{ fontSize: "24px" }} /> Dashboard 
               </Link>
@@ -172,6 +191,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "reports" ? "active" : ""}
+                aria-selected={activeSection === "reports"} 
+
 
               >
                 <FaChartBar style={{ fontSize: "24px" }} /> Reports
@@ -185,6 +206,9 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "lock" ? "active" : ""}
+                aria-selected={activeSection === "lock"} 
+                
+
 
               >
                 <FaLockOpen style={{ fontSize: "24px" }} /> Lock Transaction
@@ -198,6 +222,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "whatsapp" ? "active" : ""}
+                aria-selected={activeSection === "whatsapp"} 
+
 
               >
                 <FaWhatsapp style={{ fontSize: "24px" }} /> WhatsApp
@@ -211,6 +237,8 @@ const Sidebar = ({ activeSection }) => {
                 smooth={true}
                 duration={500}
                 className={activeSection === "other" ? "active" : ""}
+                aria-selected={activeSection === "other"} 
+
 
               >
                 <FaEllipsisH style={{ fontSize: "24px" }} /> Other
