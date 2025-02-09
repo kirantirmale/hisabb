@@ -88,11 +88,13 @@
 .sidebar nav ul li a:hover {
   padding-left: 10px;
   transition: all 0.3s;
+  color: #007bff;
+  cursor: pointer;
+
 }
 
 .sidebar nav ul li a.active {
   color: #007bff;
-  font-weight: bold;
   background-color: #f0f0f0;
   border-radius: 5px;
 }
