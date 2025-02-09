@@ -20,7 +20,6 @@ const Feature = () => {
 
         sections.forEach((section) => observer.observe(section));
 
-        return () => sections.forEach((section) => observer.unobserve(section));
     }, []);
 
     return (

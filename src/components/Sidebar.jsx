@@ -21,11 +21,13 @@ import {
 } from "react-icons/fa";
 
 const Sidebar = ({ activeSection }) => {
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
   console.log(activeSection,"activeSection")
+  
   return (
     <>
       <div className="sidemenu">

@@ -15,6 +15,7 @@
 
 }
 
+
 .menu-btn {
   position: fixed;
   top: 65px;
@@ -90,7 +91,10 @@
 }
 
 .sidebar nav ul li a.active {
-  color: black;
+  color: #007bff;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
 
 .content {
@@ -109,7 +113,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   .content {
     margin-left: 0;
@@ -185,13 +188,11 @@ h2 {
 
 .inventory-im {
   width: 100px;
-  /* Adjust as needed */
   height: auto;
 }
 
 .inventory-text {
   font-size: 18px;
-  /* font-weight: bold; */
   margin: 10px 0;
   color: gray;
   text-align: center;
@@ -244,9 +245,7 @@ h2 {
 
 .reports-container {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  /* max-width: 900px; */
   margin: auto;
 }
 
@@ -292,20 +291,9 @@ h2 {
 
 .other-img {
   width: 60%;
-  /* Adjust width as needed */
   max-width: 600px;
-  /* Set a max width */
   height: auto;
   display: block;
   margin: 10px auto;
-  /* Center the image */
   border-radius: 8px;
-  /* Optional for rounded corners */
-}
-
-.sidebar nav ul li a.active {
-  color: #007bff;
-  font-weight: bold;
-  background-color: #f0f0f0;
-  border-radius: 5px;
 }
