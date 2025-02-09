@@ -36,7 +36,7 @@ const Features = ({ setActiveSection }) => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
-      let currentSection = "";
+      let currentSection = "invoicing";
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;

@@ -14,9 +14,6 @@ import { FaFileInvoice,
    FaLockOpen,
    FaWhatsapp,
    FaEllipsisH,
-   FaTimes,
-   FaBars,
-   FaHamburger
    } from "react-icons/fa";
 
 const Sidebar = ({ activeSection }) => {
