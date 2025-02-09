@@ -3,11 +3,13 @@
   --black: black;
   --white: white;
 }
-
-.features-container {
-  display: flex;
-  height: 100vh;
+.container{
+  max-width: 1180px !important;
+  margin: 0px auto !important;
+  padding-bottom: 100px !important;
 }
+
+
 
 .sidemenu {
   width: 100% !important;
