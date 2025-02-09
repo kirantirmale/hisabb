@@ -30,7 +30,7 @@ import whatsapp from "../images/features/whatsapp.png";
 import other from "../images/features/search.png";
 import { SlArrowUpCircle } from "react-icons/sl";
 
-const Features = () => {
+const Features = ({ setActiveSection }) => {
 
   const [showTopBtn, setShowTopBtn] = useState(false);
 
@@ -50,6 +50,35 @@ const Features = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+
+  const observer = useRef(null);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("Active Section:", entry.target.id);
+
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sections.forEach((section) => {
+      observer.current.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.current.unobserve(section));
+    };
+  }, [setActiveSection]);
+
 
 
   return (

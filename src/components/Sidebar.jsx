@@ -24,19 +24,11 @@ const Sidebar = ({ activeSection }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
   
-  console.log(activeSection,"activeSection")
 
   return (
     <>
-      {/* <div className="sidemenu">
-        <button className="menu-btn" onClick={toggleSidebar}>
-          {isOpen ? <FaTimes /> : <FaHamburger style={{ color: "orange" }} />}
-        </button>
-      </div> */}
+     
 
       <div className={`sidebar`}>
         <nav>
