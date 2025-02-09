@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from "react";
 import invoice from "../images/features/Invoicing.png";
-import income1 from "../images/features/income1.png"
-import income2 from "../images/features/income2.png"
-import income3 from "../images/features/income3.png"
-import contact1 from "../images/features/contact1.png"
-import contact2 from "../images/features/contact2.png"
+import income1 from "../images/features/income1.png";
+import income2 from "../images/features/income2.png";
+import income3 from "../images/features/income3.png";
+import contact1 from "../images/features/contact1.png";
+import contact2 from "../images/features/contact2.png";
 import payment1 from "../images/features/payment1.png"
 import payment2 from "../images/features/payment2.png"
 import payment3 from "../images/features/payment3.png"
@@ -31,11 +31,24 @@ import other from "../images/features/search.png";
 import { SlArrowUpCircle } from "react-icons/sl";
 
 const Features = ({ setActiveSection }) => {
-
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      setActiveSection(currentSection);
+
       if (window.scrollY > 300) {
         setShowTopBtn(true);
       } else {
@@ -45,91 +58,66 @@ const Features = ({ setActiveSection }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [setActiveSection]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-
-  const observer = useRef(null);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log("Active Section:", entry.target.id);
-
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    sections.forEach((section) => {
-      observer.current.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => observer.current.unobserve(section));
-    };
-  }, [setActiveSection]);
-
-
-
   return (
     <div className="content">
-
       <section id="invoicing">
-        <div className='containerr'>
-          <h2 className='feature-h2'>Invoicing</h2>
+        <div className="containerr">
+          <h2 className="feature-h2">Invoicing</h2>
           <img src={invoice} alt="Invoicing" />
-          <p className='invoicing-p'>
-            Hisab makes it easy to create and send professional invoices via SMS/email to your customers.
+          <p className="invoicing-p">
+            Hisab makes it easy to create and send professional invoices via
+            SMS/email to your customers.
           </p>
         </div>
       </section>
 
       <section id="expense">
-        <div className='containerr'>
-          <h2 className='feature-h2'>Easily keep track of your expenses and incomes</h2>
-          <div className='row' style={{ marginTop: "20px" }}>
+        <div className="containerr">
+          <h2 className="feature-h2">
+            Easily keep track of your expenses and incomes
+          </h2>
+          <div className="row" style={{ marginTop: "20px" }}>
             <div className="col-md-4">
               <img src={income1} alt="Expense" />
-              <p className='expense-p'>Complete control over your incomes and expenses</p>
+              <p className="expense-p">
+                Complete control over your incomes and expenses
+              </p>
             </div>
             <div className="col-md-4">
               <img src={income2} alt="Expense" />
-              <p className='expense-p'>Categorise them as you want</p>
-
+              <p className="expense-p">Categorize them as you want</p>
             </div>
             <div className="col-md-4">
               <img src={income3} alt="Expense" />
-              <p className='expense-p'>Get overview of monthly income and expense</p>
-
+              <p className="expense-p">
+                Get an overview of monthly income and expense
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-
       <section id="contacts">
-        <div className='containerr'>
-          <h2 className='feature-h2'>Manage contacts easily</h2>
-
-          <div className='row'>
-            <div className='col-md-5' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="containerr">
+          <h2 className="feature-h2">Manage contacts easily</h2>
+          <div className="row">
+            <div className="col-md-5" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
               <img src={contact1} alt="Contact" style={{ width: "60%", height: "80%" }} />
-              <p className='contact-p'>Always keep your contact<br /> information updated.
-                Also stay informed <br />about transactions of contacts.</p>
+              <p className="contact-p">
+                Always keep your contact<br /> information updated. Also stay informed <br />about transactions of contacts.
+              </p>
             </div>
-            <div className='col-md-6'>
+            <div className="col-md-6">
               <img src={contact2} alt="Contact" style={{ width: "100%", height: "80%" }} />
-              <p className='contact-p'>Manage your customers and vendors as contact</p>
+              <p className="contact-p">
+                Manage your customers and vendors as contact
+              </p>
             </div>
           </div>
         </div>
@@ -140,15 +128,15 @@ const Features = ({ setActiveSection }) => {
           <h2 className='feature-h2'>Record payments paid to contacts or received from contacts</h2>
           <div className='row'>
             <div className='col-md-6'>
-              <img src={payment1} alt="Payment" style={{ width: "80%", height: "100%", marginTop: "25px" }} />
+              <img src={payment1} alt="Payment" />
               <p className='contact-p'>Make single payment of multiple transactions either its payable or receivable</p>
             </div>
             <div className='col-md-6'>
-              <img src={payment2} alt="Payment" style={{ width: "80%", height: "100%", marginTop: "20px" }} />
+              <img src={payment2} alt="Payment" />
               <p className='contact-p'>Easily manage discount/surcharge and excess amount while making payments</p>
             </div>
           </div>
-          <div className='row' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+          <div className='row' >
             <div className='col' style={{ textAlign: 'center' }}>
               <img src={payment3} alt="Payment" style={{ width: "50%", height: "100%", }} />
               <p className='contact-p' style={{ marginTop: '10px' }}>
@@ -261,13 +249,13 @@ const Features = ({ setActiveSection }) => {
             <div className='col-md-6' >
               <img src={coll1} alt="collaborate" />
               <h3 className='multicurrency-h3'>Role based access</h3>
-              <p className='collaborate-p'>Share with any numbers of users and let them help you manage your business finances.
+              <p className='expense-p'>Share with any numbers of users and let them help you manage your business finances.
                 Invite your accountant and share your financial information easily.</p>
             </div>
             <div className='col-md-6'>
               <img src={coll2} alt="collaborate" />
               <h3 className='multicurrency-h3'>Manage multiple business</h3>
-              <p className='collaborate-p'>Manage your multiple businesses from single account</p>
+              <p className='expense-p'>Manage your multiple businesses from single account</p>
             </div>
           </div>
         </div>
@@ -276,13 +264,13 @@ const Features = ({ setActiveSection }) => {
       <section id="dashboard">
         <h2 className='feature-h2'>Dashboard</h2>
         <img src={Dashboard} alt="dashboard" />
-        <p className='multicurrency-p'>See how your business is going at a glance with charts on dashboard</p>
+        <p className='expense-p'>See how your business is going at a glance with charts on dashboard</p>
       </section>
 
 
       <section id="reports">
         <h2 className="feature-h2">Reports</h2>
-        <div className="reports-containerr">
+        <div className="reports-container">
           <div className="reports-main">
             <img src={run1} alt="Reports Overview" className="reports-main-img" />
             <p className="reports-text">
@@ -295,7 +283,7 @@ const Features = ({ setActiveSection }) => {
             <p className="reports-text">
               Instantly generate/download required GST reports that you need to submit while filing monthly GST returns.
             </p>
-            <div className="reports-sub-containerr">
+            <div className="reports-sub-container">
               <div className="reports-sub-item">
                 <img src={run2} alt="GST Sales Report" className="reports-sub-img" />
                 <p className="reports-text">
@@ -317,23 +305,20 @@ const Features = ({ setActiveSection }) => {
       <section id="lock">
         <h2 className='feature-h2'>Lock Transaction</h2>
         <img src={lock} alt="Invoicing" />
-        <p className='multicurrency-p'>When working in a team, there is always a fear of records being changed or deleted, by mistake or by intention. Hisab allows you to automatically lock transactions at the end of the day, so only Admin users can edit or delete them from the next day</p>
+        <p className='expense-p'>When working in a team, there is always a fear of records being changed or deleted, by mistake or by intention. Hisab allows you to automatically lock transactions at the end of the day, so only Admin users can edit or delete them from the next day</p>
       </section>
 
       <section id="whatsapp">
         <h2 className='feature-h2'>WhatsApp</h2>
         <img src={whatsapp} alt="Invoicing" />
-        <p className='multicurrency-p'>When you create a new transaction like Sale Invoice, Receipt and Advanced Receipt notification is automatically sent to your customer on WhatsApp and Email. Such transactions can be shared later on too</p>
+        <p className='expense-p'>When you create a new transaction like Sale Invoice, Receipt and Advanced Receipt notification is automatically sent to your customer on WhatsApp and Email. Such transactions can be shared later on too</p>
       </section>
 
       <section id="other">
         <h2 className="feature-h2">Faster, smarter way to search and navigate.</h2>
         <img src={other} alt="Other Features" className="other-img" />
-        <p className="multicurrency-p">Search helps you spend less time getting there, so you can focus on getting things done.</p>
+        <p className="expense-p">Search helps you spend less time getting there, so you can focus on getting things done.</p>
       </section>
-
-
-
 
       {showTopBtn && (
         <button
@@ -349,7 +334,7 @@ const Features = ({ setActiveSection }) => {
             borderRadius: "15px",
             cursor: "pointer",
             fontSize: "18px",
-            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)"
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
           <SlArrowUpCircle />

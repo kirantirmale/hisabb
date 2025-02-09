@@ -1,80 +1,63 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
-import {
-  FaFileInvoice,
+import { FaFileInvoice, 
   FaMoneyBillWave,
-  FaAddressBook,
-  FaCreditCard,
-  FaWarehouse,
-  FaPiggyBank,
-  FaGlobe,
-  FaFileInvoiceDollar,
-  FaChartBar,
-  FaLock,
-  FaRegChartBar,
-  FaLockOpen,
-  FaWhatsapp,
-  FaEllipsisH,
-  FaTimes,
-  FaBars,
-  FaHamburger
-} from "react-icons/fa";
+   FaAddressBook,
+   FaCreditCard,
+   FaWarehouse,
+   FaPiggyBank,
+   FaGlobe,
+   FaFileInvoiceDollar,
+   FaChartBar,
+   FaLock,
+   FaRegChartBar,
+   FaLockOpen,
+   FaWhatsapp,
+   FaEllipsisH,
+   FaTimes,
+   FaBars,
+   FaHamburger
+   } from "react-icons/fa";
 
 const Sidebar = ({ activeSection }) => {
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  
-
   return (
-    <>
-     
-
-      <div className={`sidebar`}>
-        <nav>
-          <ul>
-            <li>
-              <Link
-                to="invoicing"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "invoicing" ? "active" : ""}
-                onClick={() => {
-                  setIsOpen(false);
-                }}              >
-                <FaFileInvoice /> Invoicing
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="expense"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "expense" ? "active" : ""}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-              >
-                <FaMoneyBillWave /> Expense / Income
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="contacts"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={activeSection === "contacts" ? "active" : ""}
-              >
-                <FaAddressBook /> Contacts
-              </Link>
-            </li>
-
-            <li>
+    <div className="sidebar">
+      <nav>
+        <ul>
+          <li>
+            <Link
+              to="invoicing"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={activeSection === "invoicing" ? "active" : ""}
+            >
+              <FaFileInvoice /> Invoicing
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="expense"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={activeSection === "expense" ? "active" : ""}
+            >
+              <FaMoneyBillWave /> Expense / Income
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contacts"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={activeSection === "contacts" ? "active" : ""}
+            >
+              <FaAddressBook /> Contacts
+            </Link>
+          </li>
+          <li>
               <Link
                 to="payments"
                 spy={true}
@@ -236,10 +219,9 @@ const Sidebar = ({ activeSection }) => {
                 <FaEllipsisH style={{ fontSize: "24px" }} /> Other
               </Link>
             </li>
-          </ul>
-        </nav>
-      </div>
-    </>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
